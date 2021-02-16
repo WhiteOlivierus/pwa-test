@@ -1,3 +1,11 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  node-tests:
+    jobs:
+      - node/test
+=======
 orbs: # declare what orbs we are going to use
     node: circleci/node@2.0.2 # the node orb provides common node-related configuration
 
@@ -12,3 +20,4 @@ workflows:
                   version: 12.16.0
             - node/test:
                   version: 10.19.0
+

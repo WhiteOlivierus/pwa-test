@@ -12,13 +12,13 @@ workflows:
                   version: 12.16.0
             - node/test:
                   version: 10.19.0
-    building:
-        jobs:
-            build:
-                steps:
-                    - run:
-                          name: "Build Project"
-                          command: "yarn build"
-                    - run:
-                          name: "Deploy to Firebase Hosting"
-                          command: "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
+
+jobs:
+    build:
+        steps:
+            - run:
+                  name: "Build Project"
+                  command: "yarn build"
+            - run:
+                  name: "Deploy to Firebase Hosting"
+                  command: "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"

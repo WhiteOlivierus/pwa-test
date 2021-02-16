@@ -1,3 +1,11 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  node-tests:
+    jobs:
+      - node/test
+=======
 orbs: # declare what orbs we are going to use
     node: circleci/node@2.0.2 # the node orb provides common node-related configuration
 
@@ -18,3 +26,4 @@ workflows:
             - run:
                   name: "Deploy to Firebase Hosting"
                   command: "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
+
